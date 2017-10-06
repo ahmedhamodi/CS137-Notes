@@ -6,6 +6,7 @@ struct tod {
 };
 
 void todPrint (struct tod when) {
+	// when.minutes = 34; //modifying here does not effect values in main
 	printf("%2.2d:%2.2d\n", when.hours, when.minutes);
 }
 
