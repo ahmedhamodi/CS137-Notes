@@ -1,0 +1,15 @@
+Let x = 0.8 represent the probability of a link being pressed to travel to a new page.
+
+r(A) = 1-0.8/3 + 0.8(r(C)/1)
+     = 1/15 + 4/5*r(C)
+
+r(B) = 1-0.8/3 + 0.8(r(A)/2)
+     = 1/15 + 2/5*r(A)
+
+r(C) = 1-0.8/3 + 0.8(r(A)/2) + 0.8(r(B)/1)
+     = 1/15 + 2/5*r(A) + 4/5*r(B)
+
+Solving this system using Gaussian Elimination or even Cramer's Rule:
+r(A) = 61/159 = 0.38365...
+r(B) = 35/159 = 0.22013...
+r(C) = 21/53 = 0.39623...
