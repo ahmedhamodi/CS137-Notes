@@ -12,7 +12,7 @@ int main(void) {
 	int b = bNum;
 	int rem = a % b;
 
-	while (rem) { //while (rem) equals while (rem != 0)
+	while (rem) { // "while (rem)" equals "while (rem != 0)"
 		a = b;
 		b = rem;
 		rem = a % b;
