@@ -11,7 +11,7 @@ int main(void) {
 	q = p;
 	*q = 17;
 	printf("%d \n", i);
-	// printf("%p \n", p);
-	// printf("%p \n", q);
+	printf("%p \n", p);
+	printf("%p \n", q);
 	return 0;
 }
