@@ -16,11 +16,12 @@ int * largest(int a[], int n) {
 	for (int i = 0; i < n; i++) {
 		if (a[i] > a[m]) m = i;
 	}
-	return a + m;
+	// return a + m;
+	return &a[m];
 }
 
 int main(void) {
-	int a[5] = {2, 17, 3, 5, 19};
+	int a[5] = {2, 17, 3, 5, 9};
 	int *p = largest(a, 5);
 	printf("largest: %d\n", *p);
 }
