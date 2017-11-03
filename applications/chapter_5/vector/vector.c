@@ -26,9 +26,22 @@ struct vector *vectorDelete(struct vector *v){
 	return NULL;
 }
 
-// void vectorSet(struct vector *v, int index, int value){
-
-// }
+void vectorSet(struct vector *v, int index, int value){
+	assert(v && index >= 0);
+	//grow the array if necessary
+	if (index >= v->size) {
+		do {
+			v->size *= 2;
+		} while (index >= v->size);
+		v->a = (int *)realloc(v->a, v->size*sizeof(int));
+	}
+	//setting undefined values
+	while (index >= v->length) {
+		v->a[v->length] = 0;
+		v->length++;
+	}
+	v->a[index] = value;
+}
 
 int vectorGet(struct vector *v, int index){
 	assert(v);
@@ -44,9 +57,11 @@ int vectorLength(struct vector *v){
 
 int main() {
   	struct vector *v = vectorCreate();
-  	// vectorSet(v, 10, 2);
-  	// printf("%d\n", vectorLength(v)); 
-  	// printf("%d\n", vectorGet(v, 10));
+  	vectorSet(v, 10, 2); //sets the 10th index to 2, aka 11 elements
+  	printf("%d\n", vectorLength(v)); //11
+  	printf("%d\n", vectorGet(v, 10)); //2
+  	printf("%d\n", vectorGet(v, 0)); //0
+  	printf("%d\n", vectorGet(v, 9)); //0
 	v = vectorDelete(v);
 	return 0;
 }
