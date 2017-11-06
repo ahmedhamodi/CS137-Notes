@@ -1,13 +1,20 @@
 #include <stdio.h>
 
 int count(char *s, char c) {
-	int count = 0;
-	for (int i=0; s[i] != '\0'; i++) {
-		if(s[i] == c) {
-			count += 1;
+	int counter = 0;
+	// for (int i=0; s[i] != '\0'; i++) {
+	// 	if(s[i] == c) {
+	// 		counter += 1;
+	// 	}
+	// }
+
+	//OR
+	for (; *s; s++) {
+		if (*s == c) {
+			counter ++;
 		}
 	}
-	return count;
+	return counter;
 }
 
 int main(void) {
