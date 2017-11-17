@@ -1,0 +1,13 @@
+5 1 12 -5 6 2 12 14
+       min
+
+-5 1 12 5 6 2 12 14
+  min
+
+-5 1 12 5 6 2 12 14
+           min
+
+-5 1 2 5 6 12 12 14
+
+Logic:
+Find minimum element, and switch location with the first element that is not guarenteed to be correct (example, we wouldn't replace 1 with -5 since -5 is guarenteed to be correct).
