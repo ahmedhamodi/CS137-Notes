@@ -29,8 +29,12 @@ void sort(int a[], int n) {
 }
 
 int main(void) {
-	int a[] = {-10, 2, 14, -7, 11, 38};
-	//expected output = -10, -7, 2, 11, 14, 38
+	// int a[] = {-10, 2, 14, -7, 11}; //odd entries
+	// int a[] = {-10, 2, 14, -7, 11, 38}; //even entries
+	int a[] = {-10, 2, -7, -7, 11, 38}; //duplicate entries
+	//expected output 1 = -10, -7, 2, 11, 14, 38
+	//expected output 2 = -10, -7, 2, 11, 14
+	//expected output 3 = -10, -7, -7, 2, 11, 38
 	int n = sizeof(a) / sizeof(int);
 	sort(a, n);
 	for (int i = 0; i < n-1; i++) {
