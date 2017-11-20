@@ -1,0 +1,13 @@
+2 -10 14 42 11 -7 0 38
+m starts at index 0 (value 2)
+i starts at index 1 (value -10)
+
+check if p[i] > p[m].
+If yes, i++ index wise.
+If no, i++ and m++ index wise, and flip the elements at p[i] and p[m].
+
+2 -10 -7 42 11 14 0 38 after 1 flip.
+2 -10 -7 0 11 14 42 38 after 2 flips.
+
+After i reaches end of the array, flip p[0] (pivot) and p[m].
+0 2 -10 -7 2 11 14 42 38
