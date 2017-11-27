@@ -10,5 +10,5 @@ int main(void) {
 	printf("%d\n", fib(10)); //55
 	printf("%d\n", fib(5)); //5
 	printf("%d\n", fib(3)); //2
-	return 1;
+	return 0;
 }

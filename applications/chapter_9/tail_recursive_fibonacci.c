@@ -1,14 +1,13 @@
 #include <stdio.h>
 
+int fib_tr(int prev, int cur, int n) {
+	if (n==0) return cur;
+	return fib_tr(cur, prev+cur, n-1);
+}
+
 int fib(int n) {
 	if (n==0) return 0;
-	int prev = 0, cur = 1;
-	for (int i = 1; i < n; i++) {
-		int next = prev + cur;
-		prev = cur;
-		cur = next;
-	}
-	return cur;
+	return fib_tr(0, 1, n-1);
 }
 
 int main(void) {
