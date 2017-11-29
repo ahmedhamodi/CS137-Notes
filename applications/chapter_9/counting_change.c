@@ -1,17 +1,28 @@
 #include <stdio.h>
 
-int counting_change(int values[], int num, int numInts) {
-	if (num == 0) return 1;
-	if (num < 0) return 0;
-	if (numInts==0) return 0;
-	return counting_change(values, num-values[numInts-1], numInts) + counting_change(values, num, numInts-1);
+int values[10001][7];
+
+int counting_change(int coins[], int amount, int n) {
+	if (amount == 0) return 1;
+	if (amount < 0) return 0;
+	if (n == 0) return 0;
+	if (values[amount][n] != -1) return values[amount][n];
+	values[amount][n] = counting_change(coins, amount-coins[n-1], n) + counting_change(coins, amount, n-1);
+	return values[amount][n];
 }
 
 int main(void) {
-	int values[] = {5, 10, 15};
+	for (int i=0; i<10001; i++) {
+		for (int j=0; j<7; j++) {
+			values[i][j] = -1;
+		}
+	}
+	int coins[] = {1, 5, 10, 25, 100, 200};
 	int num = 20;
-	int numInts = 3;
-	printf("numways: %d\n", counting_change(values, num, numInts));
+	int numInts = 6;
+	printf("numways: %d\n", counting_change(coins, num, numInts));
 	num = 200;
-	printf("numways: %d\n", counting_change(values, num, numInts));
+	printf("numways: %d\n", counting_change(coins, num, numInts));
+	num = 10000;
+	printf("numways: %d\n", counting_change(coins, num, numInts));
 }
